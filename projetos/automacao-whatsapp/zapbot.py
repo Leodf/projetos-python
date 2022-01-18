@@ -7,14 +7,14 @@ class WhatsappBot:
         self.grupos = ["Eu mesmo","Valentine"]
         options = webdriver.ChromeOptions()
         options.add_argument('lang=pt-br')
-        self.driver = webdriver.Chrome(executable_path=r'./chromedriver.exe')
+        self.driver = webdriver.Chrome()
     
     def EnviarMensagens(self):
 
         self.driver.get('https://web.whatsapp.com/')
         time.sleep(10)
         for grupo in self.grupos:
-            grupo = self.driver.find_element_by_xpath('//span[@title="{grupo}"]')
+            grupo = self.driver.find_element_by_xpath(f"//span[@title='{grupo}']")
             time.sleep(3)
             grupo.click()
             chat_box = self.driver.find_element_by_class_name('p3_M1')
