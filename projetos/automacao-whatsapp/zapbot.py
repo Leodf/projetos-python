@@ -21,7 +21,7 @@ class WhatsappBot:
             time.sleep(3)
             chat_box.click()
             chat_box.send_keys(self.mensagem)
-            botao_enviar = self.driver.find_element_by_xpath('//span[@data-icon="send"]')
+            botao_enviar = self.driver.find_element_by_xpath("//span[@data-icon='send']")
             time.sleep(3)
             botao_enviar.click()
             time.sleep(5)
