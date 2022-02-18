@@ -7,13 +7,13 @@ hora = input('Qual hora do dia é? ')
 minuto = input('Quantos minutos? ')
 
 if hora.isnumeric() and minuto.isnumeric():
-    if hora == 0 or 1 or 2 or 3 or 4 or 5 or 6 or 7 or 8 or 9 or 10 or 11:
+    if int(hora) >= 0 and int(hora) < 12 and int(minuto) < 60:
         print(f'Bom dia!! Agora são {hora} horas e {minuto} minutos')
-    elif hora == 12 or 13 or 14 or 15 or 16 or 17:
+    elif int(hora) >= 12 and int(hora) < 18 and int(minuto) < 60:
         print(f'Boa tarde!! Agora são {hora} horas e {minuto} minutos')
-    elif hora == 18 or 19 or 20 or 21 or 22 or 23:
+    elif int(hora) >= 18 and int(hora) < 24 and int(minuto) < 60:
         print(f'Boa noite!! Agora são {hora} horas e {minuto} minutos')
     else:
-        print(f'A hora {hora}:{minuto} não existe')
+        print(f'A hora {hora}:{minuto} não existe, rode o programa novamente!')
 else:
     print('voce digitou um caractere errado tente novamente')
