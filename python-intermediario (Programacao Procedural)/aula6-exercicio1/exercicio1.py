@@ -22,3 +22,15 @@ lista_de_listas_de_inteiros = [
     [1, 2, 4, 3, 1, 3, 2, 8, 9, 1],
     [6, 4, 3, 1, 2, 8, 9, 5, 7, 10],
 ]
+
+lista_resposta = []
+
+def procurar_duplicado():
+    for i in lista_de_listas_de_inteiros:
+        print(i)
+        for indice, valor in enumerate(i):
+            lista_resposta.append(valor)
+            print(lista_resposta)
+        
+
+procurar_duplicado()
