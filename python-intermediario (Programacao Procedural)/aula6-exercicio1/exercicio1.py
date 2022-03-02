@@ -13,9 +13,10 @@ Exercício
                 [1, 2, 3, 4, 5, 6] -> retorne -1 (não tem duplicados)
             
             Se não encontrar duplicados na lista, retorne -1
+
 """
 lista_de_listas_de_inteiros = [
-    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    [1, 3, 2, 6, 5, 6, 7, 8, 9, 10],
     [9, 1, 8, 9, 9, 7, 2, 1, 6, 8],
     [1, 3, 2, 2, 8, 6, 5, 4, 8, 9],
     [8, 7, 4, 6, 4, 1, 8, 7, 2, 1],
@@ -23,14 +24,18 @@ lista_de_listas_de_inteiros = [
     [6, 4, 3, 1, 2, 8, 9, 5, 7, 10],
 ]
 
-lista_resposta = []
+def encontra_primeiro_duplicado(param_lista_de_inteiros):
+    numeros_checados = set()
+    primeiro_duplicado = -1
+    
+    for numero in param_lista_de_inteiros:
+        if numero in numeros_checados:
+            primeiro_duplicado = numero
+            break
 
-def procurar_duplicado():
-    for i in lista_de_listas_de_inteiros:
-        print(i)
-        for indice, valor in enumerate(i):
-            lista_resposta.append(valor)
-            print(lista_resposta)
-        
+        numeros_checados.add(numero)
 
-procurar_duplicado()
+    return primeiro_duplicado
+
+for lista_de_inteiros in lista_de_listas_de_inteiros:
+    print(lista_de_inteiros, encontra_primeiro_duplicado(lista_de_inteiros))
