@@ -25,5 +25,5 @@ cidades_estados = zip(
 # print(cidades_estados)
 # print(list(cidades_estados))
 
-for indice, estado, cidade in cidades_estados:
-    print(indice, estado, cidade)
+for indice, estados, cidades in cidades_estados:
+    print(indice, estados, cidades)
