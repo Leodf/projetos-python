@@ -43,5 +43,24 @@ with open ('abc.txt', 'a+') as file:
     print(file.read())
 """
 # Apagando arquivos
+"""
 import os
 os.remove('abc.txt')
+"""
+
+import json
+d1 = {
+    'Pessoa 1': {
+        'nome': 'Luiz',
+        'idade': 25,
+    },
+    'Pessoa 2': {
+        'nome': 'Rose',
+        'idade': 30,
+    },
+}
+d1_json = json.dumps(d1, indent=True)
+print(d1_json)
+
+with open('abc.json', 'w+') as file:
+    file.write(d1_json)
