@@ -8,6 +8,7 @@ def primeiro_digito(cnpj_original):
 
     soma = 0
     lista_param = [5,4,3,2,9,8,7,6,5,4,3,2]
+
     for indice, valor in enumerate(cnpj_original):
         
         soma += int(valor) * lista_param[indice]
@@ -17,7 +18,6 @@ def primeiro_digito(cnpj_original):
 
             if digito1 > 9:
                 digito1 = 0      
-            
 
     return str (digito1)
 
