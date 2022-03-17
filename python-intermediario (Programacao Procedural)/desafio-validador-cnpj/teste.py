@@ -16,11 +16,11 @@ for indice, valor in enumerate(lista_param):
     if indice > 11:
         indice -= 12 
 
-        if digito > 9:
-            digito = 0      
-            
-        soma = 0
-        novo_cnpj += str(digito)
+    if digito > 9:
+        digito = 0      
+        
+    soma = 0
+    novo_cnpj += str(digito)
     
     
     
