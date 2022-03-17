@@ -6,34 +6,23 @@ def remover_caracteres(cnpj):
 def primeiro_digito(cnpj_original):
     cnpj_original = cnpj_original[:-2]
 
-    soma = 0
     lista_param = [5,4,3,2,9,8,7,6,5,4,3,2]
+    soma = sum([int(v) * lista_param[i] for i,v in enumerate(cnpj_original)])
+    digito1 = 11 - (soma % 11)
 
-    for indice, valor in enumerate(cnpj_original):
-        
-        soma += int(valor) * lista_param[indice]
-
-        if indice == len(lista_param)-1:
-            digito1 = 11 - (soma % 11)
-
-            if digito1 > 9:
-                digito1 = 0      
+    if digito1 > 9:
+        digito1 = 0      
 
     return str (digito1)
 
 def segundo_digito(cnpj_original):
     cnpj_original = cnpj_original[:-1]
 
-    soma = 0
     lista_param = [6,5,4,3,2,9,8,7,6,5,4,3,2]
-    for indice, valor in enumerate(cnpj_original):
-        
-        soma += int(valor) * lista_param[indice]
+    soma = sum([int(v) * lista_param[i] for i,v in enumerate(cnpj_original)])
+    digito2 = 11 - (soma % 11)
 
-        if indice == len(lista_param)-1:
-            digito2 = 11 - (soma % 11)
-
-            if digito2 > 9:
-                digito2 = 0      
+    if digito2 > 9:
+        digito2 = 0      
 
     return str(digito2)

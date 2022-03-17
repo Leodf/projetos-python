@@ -35,13 +35,12 @@ while True:
             novo_cnpj = cnpj_original[:-2] + primeiro + segundo
 
             if cnpj_original == novo_cnpj:
-                print()
                 print(f'O cnpj {cnpj_original} digitado é válido')
                 print()
             else:
-                print()
                 print(f'O cnpj {cnpj_original} digitado é inválido')
                 print()
         else:
             print('quantidade de números incorretos, tente novamente!!!')
+            print()
             continue
