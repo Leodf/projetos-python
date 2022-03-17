@@ -23,8 +23,8 @@ Recap.
 """
 import cnpj
 
-cnpj_original = input('Digite o CNPJ da empresa: ')
+cnpj_original = '04.252.011/0001-10'
 print(cnpj_original)
-v1 = cnpj.remover_caracteres(cnpj_original)
-print(v1)
-v2 = cnpj.primeiro_digito(v1)
+novo_cnpj = cnpj.remover_caracteres(cnpj_original)
+print(novo_cnpj)
+v2 = cnpj.primeiro_digito(novo_cnpj)
