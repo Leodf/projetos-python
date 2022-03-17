@@ -3,20 +3,37 @@ import re
 def remover_caracteres(cnpj):
     return re.sub(r'[^0-9]', '', cnpj)
 
-def primeiro_digito(novo_cnpj):
-    novo_cnpj = novo_cnpj[:-2]
+def primeiro_digito(cnpj_original):
+    cnpj_original = cnpj_original[:-2]
 
     soma = 0
     lista_param = [5,4,3,2,9,8,7,6,5,4,3,2]
-    for indice, valor in enumerate(novo_cnpj):
+    for indice, valor in enumerate(cnpj_original):
         
         soma += int(valor) * lista_param[indice]
 
-        if indice == 12:
-            digito = 11 - (soma % 11)
+        if indice == len(lista_param)-1:
+            digito1 = 11 - (soma % 11)
 
-            if digito > 9:
-                digito = 0      
-            novo_cnpj += str(digito)
+            if digito1 > 9:
+                digito1 = 0      
+            
 
-    print(novo_cnpj)
+    return str (digito1)
+
+def segundo_digito(cnpj_original):
+    cnpj_original = cnpj_original[:-1]
+
+    soma = 0
+    lista_param = [6,5,4,3,2,9,8,7,6,5,4,3,2]
+    for indice, valor in enumerate(cnpj_original):
+        
+        soma += int(valor) * lista_param[indice]
+
+        if indice == len(lista_param)-1:
+            digito2 = 11 - (soma % 11)
+
+            if digito2 > 9:
+                digito2 = 0      
+
+    return str(digito2)

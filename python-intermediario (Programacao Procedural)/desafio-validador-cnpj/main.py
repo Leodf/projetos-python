@@ -23,7 +23,25 @@ Recap.
 """
 import cnpj
 
-cnpj_original = '04.252.011/0001-10'
-novo_cnpj = cnpj.remover_caracteres(cnpj_original)
-print(novo_cnpj)
-v2 = cnpj.primeiro_digito(novo_cnpj)
+while True:
+    while True:
+        cnpj_original = input('Digite p CNPJ para verificar a validade: ')
+        cnpj_original = cnpj.remover_caracteres(cnpj_original)
+    
+        if len(cnpj_original) == 14:
+            primeiro = cnpj.primeiro_digito(cnpj_original)
+            segundo = cnpj.segundo_digito(cnpj_original)
+
+            novo_cnpj = cnpj_original[:-2] + primeiro + segundo
+
+            if cnpj_original == novo_cnpj:
+                print()
+                print(f'O cnpj {cnpj_original} digitado é válido')
+                print()
+            else:
+                print()
+                print(f'O cnpj {cnpj_original} digitado é inválido')
+                print()
+        else:
+            print('quantidade de números incorretos, tente novamente!!!')
+            continue
