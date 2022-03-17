@@ -6,3 +6,8 @@ if cnpj.valida(cnpj1):
     print(f'{cnpj1} é válido')
 else:
     print(f'{cnpj1} é inválido')
+
+for i in range(100):
+    novo_cnpj = cnpj.gera()
+    formatado = cnpj.formata(novo_cnpj)
+    print(formatado)
