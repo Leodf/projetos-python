@@ -24,7 +24,6 @@ Recap.
 import cnpj
 
 cnpj_original = '04.252.011/0001-10'
-print(cnpj_original)
 novo_cnpj = cnpj.remover_caracteres(cnpj_original)
 print(novo_cnpj)
 v2 = cnpj.primeiro_digito(novo_cnpj)
