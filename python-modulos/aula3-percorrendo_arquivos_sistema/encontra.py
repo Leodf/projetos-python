@@ -2,8 +2,8 @@
 import os
 
 
-caminho_procura = 'D:\haion\Downloads'
-termo_procura = ''
+caminho_procura = '/haion'
+termo_procura = 'me encontra'
 
 def formata_tamanho(tamanho):
     base = 1024
