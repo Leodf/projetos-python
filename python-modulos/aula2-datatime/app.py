@@ -24,3 +24,4 @@ diff = d2 - d1
 print(diff)
 print(diff.total_seconds())
 print(diff.days)
+
