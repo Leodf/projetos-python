@@ -9,4 +9,5 @@ for pergunta in html.select('.s-post-summary'):
     titulo = pergunta.select_one('.s-link')
     data = pergunta.select_one('.relativetime')
     votos = pergunta.select_one('.s-post-summary--stats-item-number')
+
     print(data.text, titulo.text, 'votos '+ votos.text, sep='\t')
