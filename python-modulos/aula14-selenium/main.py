@@ -49,6 +49,11 @@ class ChromeAuto:
             logout.click()
         except Exception as e:
             print('Não foi possível fazer o logout:', e)
+    
+    def verifica_usuario(self, usuario):
+        profile_link = self.chrome.find_element_by_class_name('user-profile-link')
+        profile_link_html = profile_link.get_attribute('innerHTML')
+        print(profile_link_html)
 
     def sair(self):
         self.chrome.quit()
@@ -59,6 +64,8 @@ if __name__ == '__main__':
     chrome.clica_sign_in()
     chrome.faz_login()
     chrome.clica_perfil()
+    chrome.verifica_usuario('Leodf')
+
     chrome.faz_logout()
     sleep(5)
     chrome.sair()
