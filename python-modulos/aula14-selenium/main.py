@@ -53,7 +53,7 @@ class ChromeAuto:
     def verifica_usuario(self, usuario):
         profile_link = self.chrome.find_element_by_class_name('user-profile-link')
         profile_link_html = profile_link.get_attribute('innerHTML')
-        print(profile_link_html)
+        assert usuario in profile_link_html
 
     def sair(self):
         self.chrome.quit()
