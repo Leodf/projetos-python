@@ -1,6 +1,6 @@
 import sqlite3
 
-conexao = sqlite3.connect(r'd:\github\projetos-python\6-python-base_de_dados\aula01-sqlite\basededados.db')
+conexao = sqlite3.connect(r'd:\github\projetos-python\6-python-base_de_dados\aula01-sqlite\bancodedadosbrowser.db')
 cursor = conexao.cursor()
 
 #cursor.execute('CREATE TABLE IF NOT EXISTS clientes ('
@@ -37,16 +37,16 @@ cursor.execute(
 
 conexao.commit()
 """
-cursor.execute(
-    'SELECT nome, peso FROM clientes WHERE peso > :peso',
-    {'peso': 50}
-    )
+#cursor.execute(
+#    'SELECT nome, peso FROM clientes WHERE peso > :peso',
+#    {'peso': 50}
+#    )
 
-# cursor.execute('SELECT * FROM clientes')
+cursor.execute('SELECT * FROM clientes')
 for linha in cursor.fetchall():
-    nome, peso = linha
+    identificador, nome, peso = linha
 
-    print(nome, peso)
+    print(identificador, nome, peso)
 
 
 cursor.close()
