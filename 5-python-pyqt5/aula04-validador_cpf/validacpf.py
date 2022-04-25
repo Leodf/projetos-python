@@ -1,6 +1,6 @@
 
-while True:
-    cpf = input('Digite o número de CPF: ')
+def valida_cpf(cpf):
+    cpf = cpf
     novo_cpf = cpf[:-2]
 
     reverso = 10
@@ -22,8 +22,8 @@ while True:
             novo_cpf += str (d)
         
     if cpf == novo_cpf:
-        print('Válido')
+        return True
     else:
-        print('Inválido')
+        return False
 
     
