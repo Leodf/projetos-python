@@ -14,7 +14,9 @@ class GeraValidaCPF(QMainWindow, design.Ui_MainWindow):
         self.btnValidaCPF.clicked.connect(self.valida_cpf)
 
     def gera_cpf(self):
-        print('Gera')
+        self.labelRetorno.setText(
+            str(gera_cpf())
+        )
 
     def valida_cpf(self):
         cpf = self.inputValidaCPF.text()
