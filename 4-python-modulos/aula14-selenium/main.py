@@ -4,7 +4,7 @@ from time import sleep
 
 class ChromeAuto:
     def __init__(self):
-        self.driver_path = './python-modulos/aula14-selenium/chromedriver'
+        self.driver_path = './python-modulos/aula14-selenium/chromedriver.exe'
         self.options = webdriver.ChromeOptions()
         #self.options.add_argument('user-data-dir=./python-modulos/aula14-selenium/Perfil')
         self.chrome = webdriver.Chrome(
