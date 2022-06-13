@@ -62,4 +62,5 @@ class PostDetalhes(UpdateView):
     template_name = 'posts/post_detalhes.html'
     model = Post
     form_class = FormComentario
+    context_object_name = 'post'
     
